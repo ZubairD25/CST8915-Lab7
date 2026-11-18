@@ -13,7 +13,7 @@ RabbitMQ is a stateful because it stores information and preserves data. Statles
 The problem is whenever a pod is deleted and is replaced (which happens a lot in Kubernetes) all the information is lost. The new container will start without the previous container stored data. This can disrupt communications between the services. 
 
 ### What Happens When the RabbitMQ Pod Is Deleted?
-When I delete the the pod which was then automatically replaced due to K8 Deployment, the qeueue in RabbitMQ portal was erased. It showed 'no queues..." display.
+When I deleted the pod which was then automatically replaced due to the K8 Deployment, the queue in RabbitMQ portal was erased. It showed a '...no queues..." display.
 
 ### Potential Solutions
 According to the official Kubernetes website, Kubernetes can be created with persistent volumed called PersistentVolume (PV) and PersistentVolumeClaim (PVC).  This allows RabbitMQ to store its data outside the container's temporary filesystem so that it can survive Pod replacement.
